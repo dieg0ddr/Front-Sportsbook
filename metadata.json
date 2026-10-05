@@ -1,0 +1,6 @@
+{
+  "name": "BetSports - Apostas Esportivas",
+  "description": "Plataforma completa de apostas esportivas online, cotações ao vivo, múltiplas turbinadas e acompanhamento de jogos em tempo real.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
