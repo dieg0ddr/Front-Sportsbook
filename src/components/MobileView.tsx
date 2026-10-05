@@ -16,6 +16,7 @@ import {
   Flame,
 } from 'lucide-react';
 import { OddSelection, UserAccount } from '../types/sportsbook';
+import { BasketballRows } from './BasketballRows';
 import {
   FootballIcon,
   TennisIcon,
@@ -420,7 +421,9 @@ export const MobileView: React.FC<MobileViewProps> = ({
 
       {/* 6. Match Cards List */}
       <div className="px-3 space-y-2.5">
-        {MOBILE_MATCHES_LIST.map((match) => {
+        {activeSport === 'basquete' ? (
+          <BasketballRows selectedOdds={selectedOdds} onToggleOdd={onToggleOdd} />
+        ) : MOBILE_MATCHES_LIST.map((match) => {
           const isHomeSelected = isOddSelected(match.id, match.homeTeam);
           const isDrawSelected = isOddSelected(match.id, 'Empate');
           const isAwaySelected = isOddSelected(match.id, match.awayTeam);

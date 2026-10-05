@@ -11,6 +11,7 @@ import { Sidebar } from './components/Sidebar';
 import { HeroBanner } from './components/HeroBanner';
 import { PopularMultiples } from './components/PopularMultiples';
 import { MatchesList } from './components/MatchesList';
+import { BasketballRows } from './components/BasketballRows';
 import { PitchTracker } from './components/PitchTracker';
 import { BetSlip } from './components/BetSlip';
 import { Footer } from './components/Footer';
@@ -186,13 +187,20 @@ export default function App() {
                 onToggleOdd={handleToggleOdd}
                 selectedSport={selectedSport}
                 setSelectedSport={setSelectedSport}
+                showCards={selectedSport !== 'basquete'}
               />
 
-              {/* Pre-Match Leagues and AO VIVO section */}
-              <MatchesList
-                selectedOdds={selections}
-                onToggleOdd={handleToggleOdd}
-              />
+              {selectedSport === 'basquete' ? (
+                <BasketballRows
+                  selectedOdds={selections}
+                  onToggleOdd={handleToggleOdd}
+                />
+              ) : (
+                <MatchesList
+                  selectedOdds={selections}
+                  onToggleOdd={handleToggleOdd}
+                />
+              )}
             </div>
 
             {/* Right Column (Live Radar & Betslip) */}

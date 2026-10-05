@@ -8,6 +8,7 @@ interface PopularMultiplesProps {
   onToggleOdd: (selection: OddSelection) => void;
   selectedSport: string;
   setSelectedSport: (sport: string) => void;
+  showCards?: boolean;
 }
 
 // Exact SVGs requested by user
@@ -69,6 +70,7 @@ export const PopularMultiples: React.FC<PopularMultiplesProps> = ({
   onToggleOdd,
   selectedSport,
   setSelectedSport,
+  showCards = true,
 }) => {
   const sports = [
     { id: 'futebol', label: 'Futebol', icon: <FootballIcon /> },
@@ -121,7 +123,7 @@ export const PopularMultiples: React.FC<PopularMultiplesProps> = ({
         })}
       </div>
 
-      {/* Popular Multiples Section */}
+      {showCards && (
       <div className="space-y-2.5">
         <div className="text-sm font-bold text-white tracking-wide">
           Múltiplas Populares
@@ -259,6 +261,7 @@ export const PopularMultiples: React.FC<PopularMultiplesProps> = ({
           })}
         </div>
       </div>
+      )}
     </div>
   );
 };
